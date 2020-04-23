@@ -9,7 +9,11 @@ COPY package*.json ./
 RUN npm ci
 # Bundle app source
 COPY . .
+RUN chmod 777 /usr/src/app
+
 RUN ionic build
+
+
 
 ## Run 
 FROM nginx:alpine
